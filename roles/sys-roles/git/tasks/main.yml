@@ -1,0 +1,14 @@
+---
+
+- name: Install git
+  apt: name={{ item }} state=present
+  with_items:
+    - git
+    - git-core
+    - git-gui
+
+- name: Install git tools
+  apt: name={{ item }} state=present
+  with_items: git_extra_tools
+
+

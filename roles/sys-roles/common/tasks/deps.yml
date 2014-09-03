@@ -1,0 +1,4 @@
+---
+- name: Install sys dependencies that do not require configuring
+  apt: name={{ item }} state=present
+  with_items: sys_dependencies

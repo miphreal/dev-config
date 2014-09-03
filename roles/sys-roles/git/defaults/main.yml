@@ -1,0 +1,7 @@
+---
+git_extra_tools:
+  - gitg
+  - git-cola
+  - gitk
+  - tig
+  - giggle

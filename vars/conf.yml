@@ -1,0 +1,23 @@
+---
+sys_dependencies:
+  # network utils
+  - curl
+  - mtr     # traceroute
+
+  # sys monitors
+  - htop
+  - iotop
+  - dstat
+
+  # network monitors
+  - slurm
+
+  # file manager
+  - mc
+  - ranger
+
+  # archives
+  - atool
+
+  # X11
+  - xclip
