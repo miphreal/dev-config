@@ -1,10 +1,10 @@
 ---
-- hosts: dev-machine
+- hosts: dev
   sudo: yes
-  vars_files:
-  - vars/conf.yml
   roles:
   - sys-roles/common
   - sys-roles/ntp
   - sys-roles/git
   - sys-roles/java
+  - sys-roles/gnome-shell
+  - sys-roles/supervisor

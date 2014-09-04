@@ -21,3 +21,9 @@ sys_dependencies:
 
   # X11
   - xclip
+
+  # Python related
+  - python-pip
+
+  # Other
+  - gparted

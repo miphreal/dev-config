@@ -1,4 +1,4 @@
-[dev-machine]
+[dev]
 192.168.0.149 hostname=miph-test
 
 [all:vars]

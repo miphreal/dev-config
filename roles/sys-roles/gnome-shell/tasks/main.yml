@@ -1,0 +1,7 @@
+---
+- name: Install gnome-shell
+  apt: name={{ item }} state=present
+  with_items:
+    - gnome-shell
+    - gnome-shell-common
+    - gnome-shell-extensions
