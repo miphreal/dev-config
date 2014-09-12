@@ -1,0 +1,14 @@
+---
+
+- name: Add tmux repository
+  apt_repository: repo='{{ tmux_repo }}' state=present update_cache=yes
+
+- name: Install tmux
+  apt: name={{ item }} state=latest
+  with_items: tmux_packages
+
+- name: Configure tmux
+  remote_user: "{{ username }}"
+  sudo: false
+  template: src=tmux.conf.j2 dest='/home/{{ username }}/.tmux.conf'
+            owner={{ username }}

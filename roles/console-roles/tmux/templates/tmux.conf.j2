@@ -1,0 +1,8 @@
+set -g default-terminal "{{ tmux_default_terminal }}
+set -g history-limit {{ tmux_history_limit }}
+
+{% if tmux_powerline %}
+source '/home/{{ username }}/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf'
+{% endif %}
+
+set -g default-shell "{{ tmux_default_shell }}"
