@@ -1,0 +1,11 @@
+---
+
+- name: Add VirtualBox repository key
+  apt_key: url='{{ virtualbox_repo_key }}' state=present
+
+- name: Add VirtualBox repository
+  apt_repository: repo='{{ virtualbox_repo }}' state=present update_cache=yes
+
+- name: Install VirtualBox
+  apt: name={{ item }} state=latest
+  with_items: virtualbox_packages

@@ -1,0 +1,7 @@
+---
+virtualbox_packages:
+  - virtualbox-4.3
+  - dkms
+
+virtualbox_repo: 'deb http://download.virtualbox.org/virtualbox/debian trusty contrib'
+virtualbox_repo_key: 'https://www.virtualbox.org/download/oracle_vbox.asc'
