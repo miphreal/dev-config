@@ -1,0 +1,13 @@
+---
+- name: Install ssh
+  apt: name=ssh state=present force=yes
+
+- name: ssh config
+  template: src=ssh_config.j2 dest=/etc/ssh/ssh_config
+
+- name: sshd config
+  template: src=sshd_config.j2 dest=/etc/ssh/sshd_config
+  notify: restart ssh
+
+- name: Start the ssh service
+  service: name=ssh state=started enabled=true
