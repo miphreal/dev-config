@@ -1,6 +1,6 @@
 ---
 - name: Install ntp
-  apt: pkg=ntp state=present force=yes
+  apt: name=ntp state=present force=yes
 
 - name: NTP config
   template: src=ntp.conf.j2 dest=/etc/ntp.conf
