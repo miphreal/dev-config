@@ -1,0 +1,6 @@
+---
+
+- name: update font cache
+  remote_user: "{{ username }}"
+  sudo: false
+  command: fc-cache -vf ~/.fonts/

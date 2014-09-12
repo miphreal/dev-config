@@ -1,0 +1,5 @@
+---
+powerline_package: 'https://github.com/Lokaltog/powerline/archive/master.zip'
+
+powerline_font_url: https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
+powerline_font_conf_url: https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf

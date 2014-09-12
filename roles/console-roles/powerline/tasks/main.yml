@@ -1,0 +1,33 @@
+---
+
+- name: Install powerline
+  remote_user: '{{ username }}'
+  sudo: false
+  pip: name='{{ powerline_package }}' extra_args='--user' state=present
+
+- name: Home .fonts folder
+  remote_user: '{{ username }}'
+  sudo: false
+  file: path='{{ item }}' state=directory owner={{ username }}
+  with_items:
+    - /home/{{ username }}/.config/fontconfig/conf.d
+    - /home/{{ username }}/.fonts
+
+- name: Get font
+  remote_user: '{{ username }}'
+  sudo: false
+  get_url: url='{{ powerline_font_url }}' dest='/home/{{ username }}/.fonts/PowerlineSymbols.otf' owner={{ username }}
+  notify:
+    - update font cache
+
+- name: Get font config
+  remote_user: '{{ username }}'
+  sudo: false
+  get_url: url='{{ powerline_font_conf_url }}'
+           dest='/home/{{ username }}/.config/fontconfig/conf.d/10-powerline-symbols.conf'
+           owner={{ username }}
+
+- name: Copy configs
+  remote_user: '{{ username }}'
+  sudo: false
+  synchronize: src=powerline dest='/home/{{ username }}/.config/powerline'
