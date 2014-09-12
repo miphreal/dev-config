@@ -1,0 +1,7 @@
+---
+
+- name: Download vagrant package
+  get_url: url={{ vagrant_src }} dest=/var/cache/vagrant.deb
+
+- name: Install vagrant
+  apt: deb=/var/cache/vagrant.deb
