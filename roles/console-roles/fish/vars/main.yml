@@ -1,0 +1,15 @@
+---
+fish_packages:
+  - fish
+
+fish_repo: 'ppa:fish-shell/nightly-master'
+fish_as_default_shell: Yes
+
+fish_greeting: ''
+
+fish_path_list:
+  - /usr/local/bin
+  - ~/.local/bin
+
+fish_powerline: True
+fish_pyenv: True

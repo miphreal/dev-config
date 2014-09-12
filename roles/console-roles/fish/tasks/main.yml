@@ -1,0 +1,31 @@
+---
+
+- name: Add fish repository
+  apt_repository: repo='{{ fish_repo }}' state=present update_cache=yes
+
+- name: Install fish
+  apt: name={{ item }} state=latest
+  with_items: fish_packages
+
+- command: echo $SHELL
+  remote_user: "{{ username }}"
+  sudo: false
+  register: echo_shell_env
+  changed_when: False
+  when: fish_as_default_shell
+
+- name: Switch to fish
+  remote_user: "{{ username }}"
+  sudo: false
+  command: chsh -s /usr/bin/fish
+  when: "fish_as_default_shell and 'fish' not in echo_shell_env.stdout"
+
+- name: fish config dir
+  remote_user: '{{ username }}'
+  sudo: false
+  file: path='/home/{{ username }}/.config/fish' state=directory recurse=yes owner={{ username }}
+
+- name: Configure fish
+  remote_user: '{{ username }}'
+  sudo: false
+  template: src=config.fish.j2 dest='/home/{{ username }}/.config/fish/config.fish' owner={{ username }}
