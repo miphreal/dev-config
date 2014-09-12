@@ -1,0 +1,8 @@
+---
+vim_packages:
+  - vim
+  - vim-common
+  - vim-python-jedi
+  - vim-syntax-docker
+  - vim-syntax-go
+  - vim-haproxy
