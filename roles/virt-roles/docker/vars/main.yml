@@ -1,0 +1,6 @@
+---
+docker_packages:
+  - lxc-docker
+
+docker_repo: 'deb https://get.docker.io/ubuntu docker main'
+docker_repo_key: 'A88D21E9'
