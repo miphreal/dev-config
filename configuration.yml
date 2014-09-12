@@ -2,9 +2,7 @@
 - hosts: dev
   sudo: yes
   roles:
-  - sys-roles/common
-  - sys-roles/ntp
-  - sys-roles/git
-  - sys-roles/java
-  - sys-roles/gnome-shell
-  - sys-roles/supervisor
+  - sys-roles
+  - console-roles
+  - virt-roles
+

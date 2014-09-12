@@ -1,7 +1,11 @@
 ---
+
+- name: Add gnome-shell repository
+  apt_repository: repo={{ gnome_shell_repo }} state=present update_cache=yes
+
 - name: Install gnome-shell
   apt: name={{ item }} state=present
-  with_items:
-    - gnome-shell
-    - gnome-shell-common
-    - gnome-shell-extensions
+  with_items: gnome_shell_packages
+
+- name: Dist-upgrade
+  apt: upgrade=dist

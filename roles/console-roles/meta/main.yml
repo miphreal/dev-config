@@ -1,0 +1,6 @@
+---
+dependencies:
+  - console-roles/powerline
+  - console-roles/fish
+  - console-roles/tmux
+  - console-roles/vim

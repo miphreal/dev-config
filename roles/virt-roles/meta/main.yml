@@ -1,0 +1,5 @@
+---
+dependencies:
+  - virt-roles/virtualbox
+  - virt-roles/vagrant
+  - virt-roles/docker

@@ -8,13 +8,15 @@ sys_dependencies:
   - htop
   - iotop
   - dstat
+  - pv
 
-  # network monitors
+  # network
   - slurm
 
   # file manager
   - mc
   - ranger
+  - tree
 
   # archives
   - atool
