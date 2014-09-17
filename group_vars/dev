@@ -29,3 +29,7 @@ sys_dependencies:
 
   # Other
   - gparted
+
+username: ubuntu
+hostname: '{{ username }}-host'
+user_home: /home/{{ username }}
