@@ -10,13 +10,13 @@
   sudo: false
   file: path='{{ item }}' state=directory owner={{ username }}
   with_items:
-    - /home/{{ username }}/.config/fontconfig/conf.d
-    - /home/{{ username }}/.fonts
+    - '{{ user_home }}/.config/fontconfig/conf.d'
+    - '{{ user_home }}/.fonts'
 
 - name: Get font
   remote_user: '{{ username }}'
   sudo: false
-  get_url: url='{{ powerline_font_url }}' dest='/home/{{ username }}/.fonts/PowerlineSymbols.otf' owner={{ username }}
+  get_url: url='{{ powerline_font_url }}' dest='{{ user_home }}/.fonts/PowerlineSymbols.otf' owner={{ username }}
   notify:
     - update font cache
 
@@ -24,10 +24,11 @@
   remote_user: '{{ username }}'
   sudo: false
   get_url: url='{{ powerline_font_conf_url }}'
-           dest='/home/{{ username }}/.config/fontconfig/conf.d/10-powerline-symbols.conf'
+           dest='{{ user_home }}/.config/fontconfig/conf.d/10-powerline-symbols.conf'
            owner={{ username }}
 
 - name: Copy configs
   remote_user: '{{ username }}'
   sudo: false
-  synchronize: src=powerline dest='/home/{{ username }}/.config/powerline'
+  command: cp -R {{ powerline_home }}/config_files/* {{ user_home }}/.config/powerline
+           creates='{{ user_home }}/.config/powerline'
