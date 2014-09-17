@@ -75,10 +75,12 @@ function tree6; tree --dirsfirst -ChFLQ 6 $argv; end
 
 
 {% if fish_powerline %}
-set fish_function_path $fish_function_path "/home/{{ username }}/.local/lib/python2.7/site-packages/powerline/bindings/fish"
+set fish_function_path $fish_function_path "{{ user_home }}/.local/lib/python2.7/site-packages/powerline/bindings/fish"
 powerline-setup
 {% endif %}
 
 {% if fish_pyenv %}
+set -x PATH "$HOME/.pyenv/bin" $PATH
 status --is-interactive; and . (pyenv init -|psub)
+status --is-interactive; and . (pyenv virtualenv-init -|psub)
 {% endif %}
