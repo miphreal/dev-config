@@ -1,0 +1,6 @@
+---
+codeblocks_packages:
+  - codeblocks
+  - codeblocks-contrib
+  - codeblocks-dbg
+  - codeblocks-common

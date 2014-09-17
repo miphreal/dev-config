@@ -1,0 +1,6 @@
+---
+dependencies:
+  - ide-roles/sublime
+  - ide-roles/codeblocks
+  - ide-roles/pycharm
+  - ide-roles/texlive

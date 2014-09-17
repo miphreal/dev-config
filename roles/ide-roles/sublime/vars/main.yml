@@ -1,0 +1,5 @@
+---
+sublime_packages:
+  - sublime-text-installer
+
+sublime_repo: 'ppa:webupd8team/sublime-text-3'

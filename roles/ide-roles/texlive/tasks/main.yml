@@ -1,0 +1,5 @@
+---
+
+- name: Install texlive
+  apt: name={{ item }} state=present
+  with_items: texlive_packages

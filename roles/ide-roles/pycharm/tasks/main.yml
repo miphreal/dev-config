@@ -1,0 +1,25 @@
+---
+
+- name: Download pycharm archive
+  get_url: url={{ pycharm_src_url }}
+           dest={{ pycharm_src }}
+
+- name: Prepare directories
+  remote_user: '{{ username }}'
+  sudo: false
+  file: path={{ pycharm_versions_dir }}
+        state=directory recurse=yes
+
+- name: Install pycharm
+  remote_user: '{{ username }}'
+  sudo: false
+  command: tar -xzf {{ pycharm_src }}
+           chdir={{ pycharm_versions_dir }}
+           creates={{ pycharm_dir }}
+
+- name: Create symlink
+  remote_user: '{{ username }}'
+  sudo: false
+  file: src={{ pycharm_dir }}/bin/pycharm.sh
+        dest={{ user_home }}/.local/bin/charm
+        state=link

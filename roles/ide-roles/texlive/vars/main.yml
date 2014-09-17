@@ -1,0 +1,7 @@
+---
+texlive_packages:
+  - latex-beamer
+  - latex2html
+  - latex2rtf
+  - texlive-full
+  - texstudio
