@@ -1,0 +1,50 @@
+---
+zsh_packages:
+  - zsh
+
+zsh_as_default_shell: yes
+
+zsh_path_list:
+  - '{{ user_home }}/.local/bin'
+  - '{{ user_home }}/bin'
+  - '/usr/local/bin'
+
+zsh_repos:
+  # required repos
+  - repo: https://github.com/zsh-users/antigen
+    name: antigen
+
+  - repo: https://github.com/robbyrussell/oh-my-zsh
+    name: oh-my-zsh
+  # other repos
+  # ...
+
+zsh_repos_dir: '{{ user_home }}/.local/share'
+
+zsh_antigen_bundles:
+  - command-not-found
+  - common-aliases
+  - sudo
+  - debian
+  - git
+  - autopep8
+  - docker
+  - npm
+  - coffee
+  - bower
+  - pep8
+  - pip
+  - pyenv
+  - pylint
+  - fabric
+  - celery
+  - python
+  - supervisor
+  - vagrant
+  - tmux
+  - heroku
+
+  # highlighting
+  - zsh-users/zsh-syntax-highlighting
+
+zsh_antigen_theme: robbyrussell

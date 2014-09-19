@@ -1,0 +1,22 @@
+---
+
+- name: Install zsh
+  apt: name={{ item }} state=latest
+  with_items: zsh_packages
+
+- name: Load zsh related repos
+  git: repo={{ item.repo }} dest={{ zsh_repos_dir }}/{{ item.name }}
+  with_items: zsh_repos
+
+- command: echo $SHELL
+  remote_user: "{{ username }}"
+  sudo: false
+  register: echo_shell_env
+  changed_when: False
+  when: zsh_as_default_shell
+
+- name: Configure zsh
+  remote_user: '{{ username }}'
+  sudo: false
+  template: src=zshrc.j2 dest='{{ user_home }}/.zshrc' owner={{ username }}
+

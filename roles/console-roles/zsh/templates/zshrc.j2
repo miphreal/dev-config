@@ -1,0 +1,13 @@
+export PATH="{% for path in zsh_path_list %}{{ path }}:{% endfor %}:$PATH"
+export ZSH={{ zsh_repos_dir }}/oh-my-zsh
+
+source {{ zsh_repos_dir }}/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+
+{% for bundle in zsh_antigen_bundles %}
+antigen bundle {{ bundle }}
+{% endfor %}
+
+antigen theme {{ zsh_antigen_theme }}
+antigen apply

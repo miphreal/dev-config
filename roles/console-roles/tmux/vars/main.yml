@@ -8,4 +8,4 @@ tmux_history_limit: 10000
 tmux_default_terminal: screen-256color
 
 tmux_powerline: True
-tmux_default_shell: /usr/bin/fish
+tmux_default_shell: /usr/bin/zsh

@@ -2,5 +2,6 @@
 dependencies:
   - console-roles/powerline
   - console-roles/fish
+  - console-roles/zsh
   - console-roles/tmux
   - console-roles/vim
