@@ -1,0 +1,22 @@
+---
+- name: Install bash
+  apt: name={{ item }} state=latest
+  with_items: bash_packages
+
+- command: echo $SHELL
+  remote_user: "{{ username }}"
+  sudo: false
+  register: echo_shell_env
+  changed_when: False
+  when: bash_as_default_shell
+
+- name: Switch to bash
+  remote_user: "{{ username }}"
+  sudo: false
+  command: chsh -s /usr/bin/bash
+  when: "bash_as_default_shell and 'bash' not in echo_shell_env.stdout"
+
+- name: Configure bash
+  remote_user: '{{ username }}'
+  sudo: false
+  template: src=bashrc.j2 dest='{{ user_home }}/.bashrc' owner={{ username }}

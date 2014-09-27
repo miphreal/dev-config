@@ -1,0 +1,13 @@
+---
+bash_packages:
+  - bash
+  - bash-completion
+
+bash_as_default_shell: no
+
+bash_path_list:
+  - $HOME/.local/bin
+
+bash_powerline: True
+bash_pyenv: True
+bash_redirect_to_tmux: True
