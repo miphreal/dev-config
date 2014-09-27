@@ -11,3 +11,7 @@ antigen bundle {{ bundle }}
 
 antigen theme {{ zsh_antigen_theme }}
 antigen apply
+
+{% if zsh_powerline %}
+source {{ powerline_home }}/bindings/zsh/powerline.zsh
+{% endif %}

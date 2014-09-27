@@ -30,5 +30,5 @@
 - name: Copy configs
   remote_user: '{{ username }}'
   sudo: false
-  command: cp -R {{ powerline_home }}/config_files/* {{ user_home }}/.config/powerline
+  command: cp -R {{ powerline_home }}/config_files {{ user_home }}/.config/powerline
            creates='{{ user_home }}/.config/powerline'
