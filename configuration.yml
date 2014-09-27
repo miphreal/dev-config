@@ -5,6 +5,7 @@
   - sys-roles
   - console-roles
   - virt-roles
+  - net-roles
   - dev-roles
   - ide-roles
 
