@@ -3,6 +3,8 @@ sys_dependencies:
   # network utils
   - curl
   - mtr     # traceroute
+  - wget
+  - sshpass
 
   # sys monitors
   - htop
@@ -29,6 +31,16 @@ sys_dependencies:
 
   # Other
   - gparted
+
+  # Build-related
+  - build-essential
+  - python-dev
+  - llvm
+  - libssl-dev
+  - zlib1g-dev
+  - libbz2-dev
+  - libreadline-dev
+  - libsqlite3-dev
 
 username: ubuntu
 hostname: '{{ username }}-host'
