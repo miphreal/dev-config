@@ -1,2 +1,6 @@
 ---
 pyenv_installer: https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer
+pyenv_home: '{{ user_home }}/.pyenv'
+pyenv_packages:
+  - python-virtualenv
+  - python-dev

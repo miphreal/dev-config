@@ -1,5 +1,9 @@
 ---
 
+- name: Install pyenv sys dependencies
+  apt: name={{ item }} state=latest
+  with_items: pyenv_packages
+
 - name: Download pyenv-installer
   get_url: url={{ pyenv_installer }} dest=/var/cache/pyenv-installer mode=555
 
