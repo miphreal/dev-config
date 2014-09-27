@@ -1,0 +1,9 @@
+---
+- name: Install conky
+  apt: name={{ item }} state=latest
+  with_items: conky_packages
+
+- name: Configure conky
+  remote_user: '{{ username }}'
+  sudo: false
+  template: src=conky.conf.j2 dest='{{ user_home }}/.config/conky.conf' owner={{ username }}
