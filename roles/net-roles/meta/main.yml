@@ -1,3 +1,4 @@
 ---
 dependencies:
   - net-roles/avahi
+  - net-roles/btsync

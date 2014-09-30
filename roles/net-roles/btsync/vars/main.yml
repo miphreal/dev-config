@@ -1,0 +1,6 @@
+---
+btsync_src_url: 'http://download-new.utorrent.com/endpoint/btsync/os/linux-x64/track/stable'
+btsync_version: '1.4.83'
+btsync_src: '/var/cache/btsync-{{ btsync_version }}.tar.gz'
+btsync_versions_dir: '{{ user_home }}/.local/opt/btsync-versions'
+btsync_dir: '{{ btsync_versions_dir }}/btsync-{{ btsync_version }}'

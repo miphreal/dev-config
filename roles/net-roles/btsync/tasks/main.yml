@@ -1,0 +1,28 @@
+---
+
+- name: Download btsync archive
+  get_url: url={{ btsync_src_url }}
+           dest={{ btsync_src }}
+
+- name: Prepare directories
+  remote_user: '{{ username }}'
+  sudo: false
+  file: path={{ item }}
+        state=directory recurse=yes
+  with_items:
+    - '{{ btsync_versions_dir }}'
+    - '{{ btsync_dir }}'
+
+- name: Install btsync
+  remote_user: '{{ username }}'
+  sudo: false
+  command: tar -xzf {{ btsync_src }} -C {{ btsync_dir }}
+           chdir={{ btsync_versions_dir }}
+           creates={{ btsync_dir }}/btsync
+
+- name: Create symlink
+  remote_user: '{{ username }}'
+  sudo: false
+  file: src={{ btsync_dir }}/btsync
+        dest={{ user_home }}/.local/bin/btsync
+        state=link
