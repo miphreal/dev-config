@@ -14,15 +14,17 @@ xftalpha                  1
 gap_x                     0
 gap_y                     0
 minimum_size              150 1080
-maximum_width             1366
+maximum_width             150
 net_avg_samples           2
 no_buffers                yes
 out_to_console            no
 own_window                yes
 own_window_class          Conky
 own_window_type           normal
-own_window_transparent    yes
+own_window_transparent    no
 own_window_hints          undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual    yes
+own_window_argb_value     128
 update_interval           3
 uppercase                 no
 use_spacer                left
@@ -69,13 +71,9 @@ ${top_mem name 5}$alignr${top_mem mem 5}%
 ${color slate grey}Disk IO:${color}
 ${diskiograph 20,150 000000 ffffff}
 ${color slate grey}Network: ${color}
-$alignc---- Wifi ----
-${downspeedgraph wlan0 9,75 000000 ffffff} D: ${downspeed wlan0}/ s 
-${upspeedgraph wlan0 9,75 000000 ffffff} U: ${upspeed wlan0}/ s
-$alignc---- LAN ----
-${downspeedgraph eth0 9,75 000000 ffffff} D: ${downspeed eth0}/ s 
-${upspeedgraph eth0 9,75 000000 ffffff} U: ${upspeed eth0}/ s
-
+${color slate grey}D:${color} ${downspeed eth0}/ s   ${color slate grey}U:${color} ${upspeed eth0}/ s
+${downspeedgraph eth0 20,150 000000 ffffff}
+${upspeedgraph eth0 20,150 000000 ffffff}
 
 ${color slate grey}Statuses:${color}
 ${execpi 60 ping miph.pro -qc5 > /dev/null && echo 'miph.pro is alive' || echo 'miph.pro is dead'} 
