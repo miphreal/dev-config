@@ -1,0 +1,12 @@
+---
+
+- name: Add chrome repository key
+  apt_key: url='{{ chrome_repo_key }}' state=present
+
+- name: Add chrome repository
+  apt_repository: repo='{{ chrome_repo }}' state=present update_cache=yes
+  when: chrome_use_repo
+
+- name: Install chrome
+  apt: name={{ item }} state=latest
+  with_items: chrome_packages

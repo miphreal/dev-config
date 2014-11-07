@@ -1,5 +1,4 @@
 ---
 conky_packages:
   - conky
-  - conky-all
   - lm-sensors

@@ -2,6 +2,7 @@
 
 - name: Add tmux repository
   apt_repository: repo='{{ tmux_repo }}' state=present update_cache=yes
+  when: tmux_use_repo
 
 - name: Install tmux
   apt: name={{ item }} state=latest

@@ -2,3 +2,4 @@
 dependencies:
   - net-roles/avahi
   - net-roles/btsync
+  - net-roles/chrome

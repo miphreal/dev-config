@@ -3,6 +3,7 @@ tmux_packages:
   - tmux
 
 tmux_repo: 'ppa:xespackages/tmux'
+tmux_use_repo: False
 
 tmux_history_limit: 10000
 tmux_default_terminal: screen-256color
