@@ -1,0 +1,8 @@
+---
+
+- name: Download dropbox deb package
+  get_url: url={{ dropbox_src_url }}
+           dest={{ dropbox_src }}
+
+- name: Install dropbox
+  apt: deb={{ dropbox_src }}

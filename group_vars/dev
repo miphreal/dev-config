@@ -5,12 +5,14 @@ sys_dependencies:
   - mtr     # traceroute
   - wget
   - sshpass
+  - postgresql-client
 
   # sys monitors
   - htop
   - iotop
   - dstat
   - pv
+  - gksu
 
   # network
   - slurm
@@ -41,6 +43,7 @@ sys_dependencies:
   - libbz2-dev
   - libreadline-dev
   - libsqlite3-dev
+  - libpq-dev
 
 username: ubuntu
 hostname: '{{ username }}-host'
