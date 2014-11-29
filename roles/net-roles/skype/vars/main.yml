@@ -1,0 +1,6 @@
+---
+skype_version: '4.3.0.37'
+skype_bin_src_url: 'https://launchpad.net/ubuntu/+archive/partner/+files/skype-bin_4.3.0.37-0ubuntu0.12.04.1_i386.deb'
+skype_bin_src: '/var/cache/skype-bin-{{ skype_version }}.deb'
+skype_src_url: 'https://launchpad.net/ubuntu/+archive/partner/+files/skype_4.3.0.37-0ubuntu0.12.04.1_amd64.deb'
+skype_src: '/var/cache/skype-{{ skype_version }}.deb'

@@ -5,3 +5,4 @@ dependencies:
   - net-roles/dropbox
   - net-roles/chrome
   - net-roles/viber
+  - net-roles/skype

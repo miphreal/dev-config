@@ -1,0 +1,17 @@
+---
+
+- name: Download skype-bin deb package
+  get_url: url={{ skype_bin_src_url }}
+           dest={{ skype_bin_src }}
+
+- name: Install skype
+  apt: deb={{ skype_bin_src }}
+  ignore_errors: yes
+
+- name: Download skype deb package
+  get_url: url={{ skype_src_url }}
+           dest={{ skype_src }}
+
+- name: Install skype
+  apt: deb={{ skype_src }}
+  ignore_errors: yes
