@@ -1,4 +1,4 @@
 ---
 dropbox_src_url: 'https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_1.6.2_amd64.deb'
 dropbox_version: '1.6.2-amd64'
-dropbox_src: '/var/cache/dropbox-{{ dropbox_version }}.tar.gz'
+dropbox_src: '/var/cache/dropbox-{{ dropbox_version }}.deb'
