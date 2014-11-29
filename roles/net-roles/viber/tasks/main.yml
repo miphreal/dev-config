@@ -1,0 +1,9 @@
+---
+
+- name: Download viber deb package
+  get_url: url={{ viber_src_url }}
+           dest={{ viber_src }}
+
+- name: Install viber
+  apt: deb={{ viber_src }}
+  ignore_errors: yes

@@ -4,3 +4,4 @@ dependencies:
   - net-roles/btsync
   - net-roles/dropbox
   - net-roles/chrome
+  - net-roles/viber

@@ -1,0 +1,4 @@
+---
+viber_src_url: 'http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb'
+viber_version: '4.2.2.6'
+viber_src: '/var/cache/viber-{{ viber_version }}.deb'
