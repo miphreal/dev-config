@@ -5,3 +5,4 @@ gnome_shell_packages:
   - gnome-shell-extensions
 
 gnome_shell_repo: 'ppa:gnome3-team/gnome3-staging'
+gnome_shell_dist_upgrade: True

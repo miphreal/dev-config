@@ -9,3 +9,4 @@
 
 - name: Dist-upgrade
   apt: upgrade=dist
+  when: gnome_shell_dist_upgrade
