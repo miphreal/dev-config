@@ -1,6 +1,6 @@
 ---
-pycharm_src_url: 'http://download.jetbrains.com/python/pycharm-professional-139.556.tar.gz'
-pycharm_version: '139.556'
+pycharm_src_url: 'http://download.jetbrains.com/python/pycharm-professional-139.673.tar.gz'
+pycharm_version: '139.673'
 pycharm_src: '/var/cache/pycharm-{{ pycharm_version }}.tar.gz'
 pycharm_versions_dir: '{{ user_home }}/.local/opt/pycharm-versions'
 pycharm_dir: '{{ pycharm_versions_dir }}/pycharm-{{ pycharm_version }}'
