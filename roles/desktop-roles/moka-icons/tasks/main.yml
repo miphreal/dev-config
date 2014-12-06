@@ -1,0 +1,9 @@
+---
+
+- name: Add moka_icons repository
+  apt_repository: repo='{{ moka_icons_repo }}' state=present update_cache=yes
+  when: moka_icons_use_repo
+
+- name: Install moka_icons
+  apt: name={{ item }} state=latest
+  with_items: moka_icons_packages

@@ -1,0 +1,6 @@
+---
+moka_icons_packages:
+  - moka-icon-theme
+
+moka_icons_repo: 'ppa:moka/stable'
+moka_icons_use_repo: True

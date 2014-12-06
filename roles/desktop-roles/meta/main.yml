@@ -1,3 +1,4 @@
 ---
 dependencies:
   - desktop-roles/conky
+  - desktop-roles/moka-icons
